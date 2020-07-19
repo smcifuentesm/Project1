@@ -16,3 +16,13 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/p/create','PostsController@create');
+Route::post('/p','PostsController@store');
+Route::get('/p/{post}','PostsController@show');
+
+Route::get('/home','HomeController@index');
+Route::get('/profile/{user}', 'profilecontroller@index')->name('profile.show');
+
